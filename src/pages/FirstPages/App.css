@@ -1,0 +1,22 @@
+html{
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+} 
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+      
+.container {
+  padding-top: 60px; /* Navbar 높이만큼 상단 여백 추가 */
+}
