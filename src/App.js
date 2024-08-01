@@ -5,6 +5,10 @@ import { FirstPage } from './Pages/FirstPages/FirstPage';
 import { Home } from './Pages/Home';
 import { MusicalCategory } from './Pages/MusicalCategory';
 import { Shop } from './Pages/Shop';
+import { Reviews } from './Pages/Reviews';
+import { MyPage } from './Pages/MyPage';
+import { Cart } from './Pages/Cart';
+
 import Footer from './Pages/FirstPages/components/Footer';
 import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
@@ -21,11 +25,15 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/musicals" element={<MusicalCategory />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/reviews" element={<Reviews />} />
+        <Route path="/mypage" element={<MyPage />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<Home />} />
       </Routes>
       <Footer />
     </div>
   );
 }
+
 
 export default App;
