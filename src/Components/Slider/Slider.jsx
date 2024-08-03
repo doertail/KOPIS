@@ -15,6 +15,7 @@ export default function MySlider() {
     autoplay: true,
     autoplaySpeed: 3000,
     fade: true,
+    arrows : true,
   };
   const images = [
     'https://via.placeholder.com/800x400?text=Image+1',
