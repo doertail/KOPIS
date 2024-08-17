@@ -1,9 +1,10 @@
 import './Navbar.css'
 import React from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 
 function Navbar() {
+  const navigate = useNavigate();
   return (
     <div>
         <div>
@@ -13,16 +14,19 @@ function Navbar() {
           </div>
         <Nav fill variant="tabs" defaultActiveKey="/home">
             <Nav.Item>
-              <Nav.Link href="home">Home</Nav.Link>
+              <div onClick={() => navigate('/home')}>Home</div>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="musicals">Musicals</Nav.Link>
+              <div onClick={() => navigate('/musicals')}>Musicals</div>
+              {/* <Nav.Link href="musicals">Musicals</Nav.Link> */}
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="shop">Shop</Nav.Link>
+              <div onClick={() => navigate('/shop')}>Shop</div>
+              {/* <Nav.Link href="shop">Shop</Nav.Link> */}
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="reviews">Reviews</Nav.Link>
+              <div onClick={() => navigate('/reviews')}>Reviews</div>
+              {/* <Nav.Link href="reviews">Reviews</Nav.Link> */}
             </Nav.Item>
           </Nav>
         </div>

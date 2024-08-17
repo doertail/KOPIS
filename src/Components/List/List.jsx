@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './List.css';
+import { useNavigate } from 'react-router-dom';
 
 const musicals = [
   {
@@ -16,40 +17,13 @@ const musicals = [
     period: '2024-08-01 - 2026-05-31',
     image: 'https://via.placeholder.com/150'
   },
-  {
-    id: 3,
-    name: 'Hamilton',
-    stage: 'Victoria Palace Theatre',
-    period: '2024-03-01 - 2024-06-30',
-    image: 'https://via.placeholder.com/150'
-  },
-  {
-    id: 4,
-    name: '..',
-    stage: '우리집',
-    period: '2024-03-01 - 2024-06-30',
-    image: 'https://via.placeholder.com/150'
-  },
-  {
-    id: 5,
-    name: '..',
-    stage: '우리집',
-    period: '2024-03-01 - 2024-06-30',
-    image: 'https://via.placeholder.com/150'
-  },
-  {
-    id: 6,
-    name: '..',
-    stage: '우리집',
-    period: '2024-03-01 - 2024-06-30',
-    image: 'https://via.placeholder.com/150'
-  },
-  // 실제로는 DB에서 가져오기.
+  // 더 많은 뮤지컬 데이터 추가 가능
 ];
 
 const List = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [filter, setFilter] = useState('all'); // 필터 상태 추가
+  const [filter, setFilter] = useState('all');
+  const navigate = useNavigate();  // useNavigate 훅 사용
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
@@ -81,7 +55,7 @@ const List = () => {
 
   return (
     <div className="list-container">
-      <div>{Date()}</div>
+      <div>{currentDate.toDateString()}</div>
       <div className="search-container">
         <input
           type="text"
@@ -97,7 +71,9 @@ const List = () => {
       </div>
       <ul className="list">
         {filteredMusicals.map((musical) => (
-          <li key={musical.id} className="list-item">
+          <li key={musical.id} className="list-item" 
+              onClick={() => navigate(`/detail/${musical.id}`)} // useNavigate로 절대 경로 설정
+          >
             <img src={musical.image} alt={musical.name} />
             <div className="list-item-info">
               <div className="list-item-title">{musical.name}</div>
