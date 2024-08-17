@@ -1,6 +1,5 @@
-// MusicalDetail.jsx
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import './MusicalDetail.css';
 
 const musicals = [
@@ -27,11 +26,16 @@ const musicals = [
 
 const MusicalDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const musical = musicals.find(m => m.id === parseInt(id));
 
   if (!musical) {
     return <div>뮤지컬을 찾을 수 없습니다.</div>;
   }
+
+  const handleGoToShop = () => {
+    navigate(`/shop?search=${encodeURIComponent(musical.name)}`);
+  };
 
   return (
     <div className="musical-detail">
@@ -41,6 +45,7 @@ const MusicalDetail = () => {
         <p><strong>상영 기간:</strong> {musical.period}</p>
         <p><strong>상영 장소:</strong> {musical.stage}</p>
         <p><strong>주연:</strong> {musical.lead}</p>
+        <button onClick={handleGoToShop} className="shop-button">Go to Shop</button>
       </div>
       <div className="musical-image">
         <img src={musical.image} alt={musical.name} />

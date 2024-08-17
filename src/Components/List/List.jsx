@@ -72,7 +72,7 @@ const List = () => {
       <ul className="list">
         {filteredMusicals.map((musical) => (
           <li key={musical.id} className="list-item" 
-              onClick={() => navigate(`/detail/${musical.id}`)} // useNavigate로 절대 경로 설정
+              onClick={() => navigate(`/musical_detail/${musical.id}`)} // useNavigate로 절대 경로 설정
           >
             <img src={musical.image} alt={musical.name} />
             <div className="list-item-info">

@@ -8,7 +8,7 @@ import { Shop } from './Pages/Shop';
 import { Reviews } from './Pages/Reviews';
 import { MyPage } from './Pages/MyPage';
 import { Cart } from './Pages/Cart';
-
+import { MDDetailPage } from './Pages/MDDetail';
 import Footer from './Pages/FirstPages/components/Footer';
 import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
@@ -25,8 +25,9 @@ function App() {
         <Route path="/" element={<FirstPage />} />
         <Route path="/home" element={<Home />} />
         <Route path="/musicals" element={<MusicalCategory />} />
-        <Route path="detail/:id" element={<Detail />} />
+        <Route path="musical_detail/:id" element={<Detail />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="md_detail/:id" element={<MDDetailPage />} />
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/cart" element={<Cart />} />
