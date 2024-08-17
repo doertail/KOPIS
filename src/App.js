@@ -12,6 +12,7 @@ import { Cart } from './Pages/Cart';
 import Footer from './Pages/FirstPages/components/Footer';
 import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
+import Detail from './Pages/Detail';
 
 function App() {
   const location = useLocation();
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element={<FirstPage />} />
         <Route path="/home" element={<Home />} />
         <Route path="/musicals" element={<MusicalCategory />} />
+        <Route path="detail/:id" element={<Detail />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/mypage" element={<MyPage />} />

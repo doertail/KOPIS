@@ -1,0 +1,30 @@
+/* MusicalDetail.css */
+.musical-detail {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  .musical-info {
+    width: 50%;
+    padding-right: 20px;
+  }
+  
+  .musical-info h2 {
+    margin-bottom: 20px;
+  }
+  
+  .musical-image {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .musical-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
